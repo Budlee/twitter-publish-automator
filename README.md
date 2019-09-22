@@ -1,6 +1,6 @@
 # Twitter publish automator
 
-A simple library to push up tweets
+A simple application to push up tweets
 
 ## Configuration
 
