@@ -2,6 +2,7 @@ package com.budlee.automation.twitter.scheduler;
 
 import com.budlee.automation.twitter.model.Tweet;
 import com.google.common.base.Preconditions;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
@@ -13,12 +14,13 @@ import java.util.Comparator;
 import java.util.Objects;
 
 @Component
+@Log
 public class DelayedTwitterStoreConverter {
 
     private Clock clock;
 
-    public DelayedTwitterStoreConverter(){
-        this(Clock.systemDefaultZone());
+    public DelayedTwitterStoreConverter() {
+        this(Clock.systemUTC());
     }
 
     public DelayedTwitterStoreConverter(Clock clock) {
@@ -39,6 +41,11 @@ public class DelayedTwitterStoreConverter {
 
     private Flux<Tweet> mapToDelayedFlux(Tweet tweet) {
         final var between = Duration.between(LocalDateTime.now(clock), tweet.getDateTime());
+        log.info(
+                String.format("Tweet will be in [%s] seconds with message [%s]",
+                        between.getSeconds(),
+                        tweet.getStatus())
+        );
         return Flux.just(tweet).delayElements(between);
     }
 }
