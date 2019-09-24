@@ -27,5 +27,5 @@ Check out the original project at https://github.com/Budlee/twitter-publish-auto
 ```
 
 ## TODO 
-   * Create Docker image 
    * Create build pipeline
+   * Push docker image with a "How To"
