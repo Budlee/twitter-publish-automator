@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
                 "twitter.key.consumer.key=consumer_key",
                 "twitter.key.consumer.secret=consumer_secret",
                 "twitter.key.access.token=access_token",
-                "twitter.key.access.secret=access_secret"
+                "twitter.key.access.secret=access_secret",
+                "tweet.store.file=src/test/resources/valid.csv"
         }
 )
 @DirtiesContext

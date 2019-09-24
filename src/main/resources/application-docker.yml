@@ -1,0 +1,13 @@
+twitter:
+  host: https://api.twitter.com
+  key:
+    consumer:
+      key: ${TWEET_CONSUMER_KEY}
+      secret: ${TWEET_CONSUMER_SECRET}
+    access:
+      token: ${TWEET_ACCESS_TOKEN}
+      secret: ${TWEET_ACCESS_SECRET}
+
+tweet:
+  store:
+    file: /opt/app/tweet/store/myTwitter.csv
