@@ -25,7 +25,3 @@ An example of the CSV
 ```csv
 Check out the original project at https://github.com/Budlee/twitter-publish-automator,1569172494
 ```
-
-## TODO 
-   * Create build pipeline
-   * Push docker image with a "How To"
